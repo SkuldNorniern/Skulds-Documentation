@@ -10,10 +10,10 @@ ___
 [State] : [ADD, MODIFY, REMOVE, REVERT, IMPROVE, FIX] Pick one
 
 Subject line :  Write in 40 characters (added functions)
- 
+
  | : Intentions (optional)
- 
-Example 1 : 
+
+Example 1 :
 
 ```
 
@@ -21,7 +21,7 @@ Example 1 :
 
 ```
 
-Example 2 : 
+Example 2 :
 
 ```
 
@@ -58,7 +58,7 @@ Example 1 :
 Example 2 :
 
 ```
-*preparimg for JIT 
+*preparimg for JIT
 /src
     / lib.rs
     / test.rs
@@ -67,6 +67,7 @@ Example 2 :
     /core
         / parser.rs
 ```
+Each tab is equal to 4 space 
 ## Final Summary
 
 ---
@@ -91,7 +92,7 @@ Example 2 :
 ```
 [FIX] fixed parser, interperter
 
-*preparimg for JIT 
+*preparimg for JIT
 /src
     / lib.rs
     / test.rs
