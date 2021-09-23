@@ -58,7 +58,7 @@ Example 1 :
 Example 2 :
 
 ```
-*preparimg for JIT
+* preparimg for JIT
 /src
     / lib.rs
     / test.rs
@@ -90,9 +90,9 @@ Example 1 :
 Example 2 :
 
 ```
-[FIX] fixed parser, interperter
+[FIX] Fixed parser, interperter
 
-*preparimg for JIT
+* preparimg for JIT
 /src
     / lib.rs
     / test.rs
