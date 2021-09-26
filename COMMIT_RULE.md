@@ -7,7 +7,7 @@ Author : Skuld Norniern
 ___
 [[State]] [Subject line]
 
-[State] : [ADD, MODIFY, REMOVE, REVERT, IMPROVE, FIX] Pick one
+[State] : [ADD, MODIFY, REMOVE, REVERT, IMPROVE, FIX] Pick one and write in UPPERCASE
 
 Subject line :  Write in 40 characters (added functions)
 
