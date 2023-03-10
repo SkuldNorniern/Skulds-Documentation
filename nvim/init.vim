@@ -8,7 +8,7 @@ Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'skywind3000/vim-keysound'
+"Plug 'skywind3000/vim-keysound'
 Plug 'psliwka/vim-smoothie'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'github/copilot.vim'
@@ -16,9 +16,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'rsaraf/vim-advanced-lint'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'ellisonleao/glow.nvim'
 
 " Terminal
-Plug 'akinsho/toggleterm.nvim'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -49,6 +52,16 @@ set colorcolumn=110
 set visualbell
 set number
 set tabstop=4
+
+" ToggleTerm Setup				
+lua << EOF
+
+require("toggleterm").setup()
+require("noice").setup()
+require('glow').setup()
+
+EOF
+
 
 " Windline ( status releated )
 lua << EOF
@@ -179,10 +192,10 @@ let mapleader=','
 :nnoremap <C-p> <Cmd>FZF<CR>
 
 " vim-keysound
-let g:keysound_enable = 1
-let g:keysound_theme = 'default'
-let g:keysound_py_version = 3
-let g:keysound_volume = 500
+"let g:keysound_enable = 1
+"let g:keysound_theme = 'default'
+"let g:keysound_py_version = 3
+"let g:keysound_volume = 500
 
 " CHADTree
 nnoremap <leader>v <cmd>CHADopen<cr>
