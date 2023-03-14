@@ -178,7 +178,7 @@ EOF
 " notify
 lua << EOF
 require("bit")
-require("notify")("My super important message")
+require("notify")("Notify Loaded.")
 require("telescope").load_extension("notify")
 
 vim.notify = require("notify")
@@ -220,7 +220,7 @@ require("bufferline").setup{
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator_icon = '▎',
+    -- indicator_icon = '▎',
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
