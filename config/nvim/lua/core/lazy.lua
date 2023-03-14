@@ -1,4 +1,4 @@
--- Description: Lazy Plugin Manager
+-- Dencription: Lazy Plugin Manager
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -12,10 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.g.mapleader = ","
 vim.opt.termguicolors = true
 
 
--- set mapleader 
-vim.g.mapleader = ","
 
 

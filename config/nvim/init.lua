@@ -1,10 +1,11 @@
 -- calling lazy core 
 require("core.lazy")
-require("core.keybinds")
-	
+require("core.misc")
+
+
 -- initliaze plugins
 require("core.plugin")
 
-require("core.misc")
+require("core.keybinds")
 
 
