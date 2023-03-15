@@ -1,4 +1,4 @@
-return{
+return {
 	"rcarriga/nvim-notify",
 	lazy = false,
 	priority = 1000,
@@ -6,6 +6,6 @@ return{
 		require("bit")
 		require("telescope").load_extension("notify")
 		vim.notify = require("notify")
-		require("notify")("Loaded notify", "info", { title = "Neovim" })
+		-- require("notify")("Loaded notify", "info", { title = "Neovim" })
 	end
 }
