@@ -5,11 +5,12 @@ return {
 		{ "psliwka/vim-smoothie" },
 		{ "lukas-reineke/indent-blankline.nvim" },
 		{ "MunifTanjim/nui.nvim" },
-		--{ "kyazdani42/nvim-web-devicon" }
+		{ "kyazdani42/nvim-web-devicons" },
 		{ "nvim-tree/nvim-web-devicons" },
 		require("plugins.util.glow"),
 		require("plugins.util.notify"),
 		require("plugins.util.flatten"),
+		require("plugins.util.lualine"),
 		require("plugins.util.chadtree"),
 		require("plugins.util.autopairs"),
 		require("plugins.util.telescope"),
