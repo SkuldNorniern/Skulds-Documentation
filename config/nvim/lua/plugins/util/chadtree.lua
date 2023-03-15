@@ -1,5 +1,5 @@
 -- Description: chadtree config
-return{
+return {
 	-- File explorer
 	{
 		"ms-jpq/chadtree",
