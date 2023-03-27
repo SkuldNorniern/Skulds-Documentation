@@ -4,7 +4,7 @@ return {
   { "psliwka/vim-smoothie" },
   { "lukas-reineke/indent-blankline.nvim" },
   { "MunifTanjim/nui.nvim" },
-  { "kyazdani42/nvim-web-devicons" },
+  --{ "kyazdani42/nvim-web-devicons" },
   { "nvim-tree/nvim-web-devicons" },
   require("plugins.util.glow"),
   require("plugins.util.notify"),
@@ -18,4 +18,6 @@ return {
   require("plugins.util.noice"),
   require("plugins.util.scrollbar"),
   require("plugins.util.toggleterm"),
+  require("plugins.util.image"),
+  require("plugins.util.baleia"),
 }
