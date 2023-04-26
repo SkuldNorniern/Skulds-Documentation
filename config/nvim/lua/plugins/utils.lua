@@ -1,6 +1,6 @@
 return {
   { "nvim-lua/plenary.nvim" },
-  { "github/copilot.vim" },
+  --{ "github/copilot.vim" },
   { "psliwka/vim-smoothie" },
   { "lukas-reineke/indent-blankline.nvim" },
   { "MunifTanjim/nui.nvim" },
@@ -20,4 +20,5 @@ return {
   require("plugins.util.toggleterm"),
   require("plugins.util.image"),
   require("plugins.util.baleia"),
+  require("plugins.util.codeium"),
 }
