@@ -1,8 +1,8 @@
--- calling lazy core 
-require("core.lazy")
-require("core.misc")
-
-
--- initliaze plugins
-require("core.plugin")
-require("core.keybinds")
+require("skuld").setup({
+  mapleader = " ",
+  plugins = true,
+  colorscheme = {
+    plugin = "rose-pine",
+    builtin = "habamax",
+  },
+})
