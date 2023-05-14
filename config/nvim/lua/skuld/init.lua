@@ -44,10 +44,10 @@ M.load_commands = function(commands)
   end
 end
 
-M.load_plugins = function()
+M.ensure_lazy = function()
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-  -- bootstrap lazy.nvim
+  -- prompt for lazy.nvim installation
   if not vim.loop.fs_stat(lazypath) then
     local answer = vim.fn.input({
       prompt = "Would you like to setup plugins? [Y/n] ",
@@ -71,17 +71,14 @@ M.load_plugins = function()
     end
   end
 
-  -- setup lazy.nvim
+  -- bring lazy.nvim into runtimepath
   vim.opt.runtimepath:prepend(lazypath)
+  return true
+end
+
+M.load_plugins = function()
   require("lazy").setup({
     spec = require(cfg_root .. ".plugin"),
-
-    ui = {
-      custom_keys = {
-        ["<LocalLeader>l"] = false,
-        ["<LocalLeader>t"] = false,
-      },
-    },
 
     change_detection = {
       enabled = false,
@@ -105,7 +102,6 @@ M.load_plugins = function()
       },
     },
   })
-  return true
 end
 
 M.setup = function(cfg)
@@ -116,7 +112,8 @@ M.setup = function(cfg)
   M.load_autocmds(M.autocmds)
   M.load_commands(M.commands)
 
-  if cfg.plugins and M.load_plugins() then
+  if cfg.plugins and M.ensure_lazy() then
+    M.load_plugins()
     vim.cmd.colorscheme(cfg.colorscheme.plugin)
   else
     vim.cmd.colorscheme(cfg.colorscheme.builtin)
