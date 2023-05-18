@@ -1,4 +1,5 @@
 return {
+  termguicolors = true,
   laststatus = 2,
   cursorline = false,
   number = true,

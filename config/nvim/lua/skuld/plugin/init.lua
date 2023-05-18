@@ -4,11 +4,11 @@ local M = {}
 local category = {
   ".meta", -- common dependencies
   ".editing", -- editing & navigation
+  ".ricing", -- visual enhancement
 
   -- ".completion", -- intellisense & snippets & AI
   -- ".mason", -- LSP, DAP, formatters, linters
   -- ".project", -- git integration & sessions
-  -- ".ricing", -- visual enhancement
   -- ".tools", -- literally tools idk
 }
 
