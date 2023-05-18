@@ -6,6 +6,9 @@ spec["folke/lazy.nvim"] = {}
 -- library of useful Lua functions
 spec["nvim-lua/plenary.nvim"] = {}
 
+-- library of common UI component
+spec["MunifTanjim/nui.nvim"] = {}
+
 -- treesitter integration
 spec["nvim-treesitter/nvim-treesitter"] = {
   build = ":TSUpdate",
