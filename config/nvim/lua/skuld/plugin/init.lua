@@ -5,10 +5,10 @@ local category = {
   ".meta", -- common dependencies
   ".editing", -- editing & navigation
   ".ricing", -- visual enhancement
+  ".project", -- git integration & sessions
 
   -- ".completion", -- intellisense & snippets & AI
   -- ".mason", -- LSP, DAP, formatters, linters
-  -- ".project", -- git integration & sessions
   -- ".tools", -- literally tools idk
 }
 
