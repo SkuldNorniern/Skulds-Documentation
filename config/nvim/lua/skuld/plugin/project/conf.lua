@@ -6,12 +6,17 @@ end
 
 conf["tpope/vim-fugitive"] = function()
   local vim = vim
-  local map = vim.keymap.set
+  local wk = require("which-key")
 
-  map("n", "<Leader>gi", "<Cmd>tab G<CR>")
-  map("n", "<Leader>gr", "<Cmd>Git restore %<CR>")
-  map("n", "<Leader>gs", "<Cmd>Git stage %<CR>")
-  map("n", "<Leader>gu", "<Cmd>Git reset -q %<CR>")
+  wk.register({
+    ["<Leader>g"] = {
+      name = "+git",
+      i = { "<Cmd>tab G<CR>", "index" },
+      r = { "<Cmd>Git restore %<CR>", "restore buffer" },
+      s = { "<Cmd>Git stage %<CR>", "stage buffer" },
+      u = { "<Cmd>Git reset -q %<CR>", "unstage buffer" },
+    },
+  })
 
   -- trigger "User InGitRepo" event upon entering a Git repository
   -- can be used to lazy load other Git related plugins
@@ -32,6 +37,7 @@ end
 
 conf["lewis6991/gitsigns.nvim"] = function()
   local gs = require("gitsigns")
+  local wk = require("which-key")
 
   gs.setup({
     -- diff indicator
@@ -75,48 +81,51 @@ conf["lewis6991/gitsigns.nvim"] = function()
     return "<Ignore>"
   end
 
-  local function hunk_or_blame(...)
+  local function hunk_or_blame()
     local acts = gs.get_actions()
     if acts ~= nil then
       local func = acts.preview_hunk or acts.blame_line
       if func ~= nil then
-        return func(...)
+        return func({ full = true })
       end
     end
   end
 
-  local map = vim.keymap.set
+  wk.register({
+    ["<Leader>g"] = {
+      p = { hunk_or_blame, "preview hunk or blame" },
 
-  -- hunk motion
-  map({ "n", "v" }, "]c", next_hunk, { expr = true })
-  map({ "n", "v" }, "[c", prev_hunk, { expr = true })
+      -- toggle diff highlight
+      ["h"] = { gs.toggle_linehl, "toggle highlight" },
+      ["+"] = { gs.toggle_signs, "toggle signs" },
+      ["0"] = { gs.toggle_numhl, "toggle numhl" },
+      ["-"] = { gs.toggle_deleted, "toggle deleted" },
 
-  -- hunk text object
-  map({ "o", "v" }, "ih", gs.select_hunk)
-  map({ "o", "v" }, "ah", gs.select_hunk)
+      -- live blame current line
+      b = { gs.toggle_current_line_blame, "toggle live blame" },
+    },
+  })
 
-  -- hunk actions
-  map({ "n", "v" }, "ghr", ":Gitsigns reset_hunk<CR>")
-  map({ "n", "v" }, "ghs", ":Gitsigns stage_hunk<CR>")
-  map({ "n", "v" }, "ghu", ":Gitsigns undo_stage_hunk<CR>")
+  wk.register({
+    ["]"] = { c = { next_hunk, "next hunk", expr = true } },
+    ["["] = { c = { prev_hunk, "prev hunk", expr = true } },
+    ["gh"] = {
+      name = "+git hunk",
+      r = { ":Gitsigns reset_hunk<CR>", "restore hunk" },
+      s = { ":Gitsigns stage_hunk<CR>", "stage hunk" },
+      u = { ":Gitsigns undo_stage_hunk<CR>", "unstage hunk" },
+    },
+  }, { mode = { "n", "v" } })
 
-  -- preview hunk or blame result of current line
-  map("n", "<Leader>gp", function()
-    hunk_or_blame({ full = true })
-  end)
-
-  -- toggle diff highlight
-  map("n", "<Leader>gh", gs.toggle_linehl)
-  map("n", "<Leader>g+", gs.toggle_signs)
-  map("n", "<Leader>g0", gs.toggle_numhl)
-  map("n", "<Leader>g-", gs.toggle_deleted)
-
-  -- live blame current line
-  map("n", "<Leader>gb", gs.toggle_current_line_blame)
+  wk.register({
+    ih = { ":Gitsigns select_hunk<CR>", "inner hunk" },
+    ah = { ":Gitsigns select_hunk<CR>", "around hunk" },
+  }, { mode = { "o", "v" } })
 end
 
 conf["sindrets/diffview.nvim"] = function()
   local dv = require("diffview")
+  local wk = require("which-key")
 
   dv.setup({
     enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
@@ -150,16 +159,19 @@ conf["sindrets/diffview.nvim"] = function()
     },
   })
 
-  local map = vim.keymap.set
+  wk.register({
+    ["<Leader>g"] = {
+      d = { ":DiffviewOpen -uno<CR>", "view diff (tracked)" },
+      D = { ":DiffviewOpen<CR>", "view diff (all)" },
 
-  -- git diff
-  map("n", "<Leader>gd", "<Cmd>DiffviewOpen -uno<CR>") -- only tracked files
-  map("n", "<Leader>gD", "<Cmd>DiffviewOpen<CR>") -- include untracked files
+      l = { ":DiffviewFileHistory %", "commit log (file)" },
+      L = { ":DiffviewFileHistory<CR>", "commit log (project)" },
+    },
+  })
 
-  -- git log / blame
-  map("n", "<Leader>gl", "<Cmd>DiffviewFileHistory %<CR>") -- current file
-  map("x", "<Leader>gl", "<Cmd>'<,'>DiffviewFileHistory<CR>") -- selected range
-  map("n", "<Leader>gL", "<Cmd>DiffviewFileHistory<CR>") -- project wide
+  wk.register({
+    ["<Leader>gl"] = { ":DiffviewFileHistory<CR>", "commit log (selected)" },
+  }, { mode = "v" })
 end
 
 conf["rmagatti/auto-session"] = function()
