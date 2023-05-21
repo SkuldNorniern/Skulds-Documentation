@@ -1,12 +1,6 @@
 local cfg_root = ...
 local vim = vim
-
-local M = {
-  options = require(cfg_root .. ".builtin.options"),
-  keymaps = require(cfg_root .. ".builtin.keymaps"),
-  autocmds = require(cfg_root .. ".builtin.autocmds"),
-  commands = require(cfg_root .. ".builtin.commands"),
-}
+local M = {}
 
 M.load_options = function(options)
   local opt = vim.opt
@@ -77,9 +71,9 @@ M.ensure_lazy = function()
 end
 
 M.load_plugins = function()
-  require("lazy").setup({
-    spec = require(cfg_root .. ".plugin"),
-
+  local lazy = require("lazy")
+  local spec = require(cfg_root .. ".plugin")
+  local config = {
     change_detection = {
       enabled = false,
       notify = false,
@@ -101,11 +95,18 @@ M.load_plugins = function()
         },
       },
     },
-  })
+  }
+
+  lazy.setup(spec, config)
 end
 
 M.setup = function(cfg)
   vim.g.mapleader = cfg.mapleader
+
+  M.options = require(cfg_root .. ".builtin.options")
+  M.keymaps = require(cfg_root .. ".builtin.keymaps")
+  M.autocmds = require(cfg_root .. ".builtin.autocmds")
+  M.commands = require(cfg_root .. ".builtin.commands")
 
   M.load_options(M.options)
   M.load_keymaps(M.keymaps)

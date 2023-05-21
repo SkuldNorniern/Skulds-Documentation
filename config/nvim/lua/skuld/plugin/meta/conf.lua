@@ -39,8 +39,7 @@ conf["nvim-treesitter/nvim-treesitter"] = function()
           ["ic"] = "@class.inner",
           ["af"] = "@function.outer",
           ["if"] = "@function.inner",
-          ["ab"] = "@block.outer",
-          ["ib"] = "@block.inner",
+          ["a/"] = "@comment.outer",
         },
         include_surrounding_whitespace = function(args)
           return args.query_string:match("outer")
