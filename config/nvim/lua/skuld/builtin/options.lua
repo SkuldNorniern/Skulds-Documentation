@@ -10,4 +10,6 @@ return {
   shiftwidth = 0,
   autoindent = true,
   cindent = true,
+  timeoutlen = 300,
+  updatetime = 100,
 }

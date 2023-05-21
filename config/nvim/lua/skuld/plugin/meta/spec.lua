@@ -3,11 +3,20 @@ local spec = {}
 -- lazy.nvim can manage itself
 spec["folke/lazy.nvim"] = {}
 
+-- keymap cheatsheet
+spec["folke/which-key.nvim"] = {}
+
 -- library of useful Lua functions
 spec["nvim-lua/plenary.nvim"] = {}
 
 -- library of common UI component
 spec["MunifTanjim/nui.nvim"] = {}
+
+-- provide filetype icons
+spec["kyazdani42/nvim-web-devicons"] = {}
+
+-- provide LSP symbol icons
+spec["onsails/lspkind.nvim"] = {}
 
 -- treesitter integration
 spec["nvim-treesitter/nvim-treesitter"] = {
@@ -27,11 +36,5 @@ spec["nvim-treesitter/nvim-treesitter"] = {
     "andymass/vim-matchup",
   },
 }
-
--- provide filetype icons
-spec["kyazdani42/nvim-web-devicons"] = {}
-
--- provide LSP symbol icons
-spec["onsails/lspkind.nvim"] = {}
 
 return spec

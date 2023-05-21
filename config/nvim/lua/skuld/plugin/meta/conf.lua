@@ -1,5 +1,50 @@
 local conf = {}
 
+conf["folke/which-key.nvim"] = function()
+  require("which-key").setup({
+    window = {
+      -- top, right, bottom, left
+      -- n > 1: absolute cell count
+      -- n < 1: percentage of screen
+      margin = { 1, 0.2, 1, 0.2 },
+      padding = { 1, 2, 1, 2 },
+    },
+    layout = { align = "center" },
+  })
+end
+
+conf["onsails/lspkind.nvim"] = function()
+  require("lspkind").init({
+    symbol_map = {
+      Text = "󰉿",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "󰜢",
+      Variable = "󰀫",
+      Class = "󰠱",
+      Interface = "",
+      Module = "",
+      Property = "󰜢",
+      Unit = "",
+      Value = "󰎠",
+      Enum = "",
+      Keyword = "󰌋",
+      Snippet = "",
+      Color = "󰏘",
+      File = "󰈙",
+      Reference = "󰈇",
+      Folder = "󰉋",
+      EnumMember = "",
+      Constant = "󰏿",
+      Struct = "󰙅",
+      Event = "",
+      Operator = "󰆕",
+      TypeParameter = "",
+    },
+  })
+end
+
 conf["nvim-treesitter/nvim-treesitter"] = function()
   require("nvim-treesitter.configs").setup({
     -- install these on startup
@@ -99,38 +144,6 @@ conf["nvim-treesitter/nvim-treesitter"] = function()
       enable = true,
       disable_virtual_text = true,
       include_match_words = true,
-    },
-  })
-end
-
-conf["onsails/lspkind.nvim"] = function()
-  require("lspkind").init({
-    symbol_map = {
-      Text = "󰉿",
-      Method = "",
-      Function = "",
-      Constructor = "",
-      Field = "󰜢",
-      Variable = "󰀫",
-      Class = "󰠱",
-      Interface = "",
-      Module = "",
-      Property = "󰜢",
-      Unit = "",
-      Value = "󰎠",
-      Enum = "",
-      Keyword = "󰌋",
-      Snippet = "",
-      Color = "󰏘",
-      File = "󰈙",
-      Reference = "󰈇",
-      Folder = "󰉋",
-      EnumMember = "",
-      Constant = "󰏿",
-      Struct = "󰙅",
-      Event = "",
-      Operator = "󰆕",
-      TypeParameter = "",
     },
   })
 end
