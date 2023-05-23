@@ -8,8 +8,7 @@ local category = {
   ".ricing", -- 'passive' UIs like statusline
   ".tools", -- 'active' UIs like sidebar
   ".completion", -- intellisense & snippets & AI
-
-  -- ".mason", -- LSP, DAP, formatters, linters
+  ".mason", -- install LS, DAP, formatters, linters
 }
 
 for _, cat in ipairs(category) do
