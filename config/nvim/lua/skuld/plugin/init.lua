@@ -7,8 +7,8 @@ local category = {
   ".project", -- git integration & sessions
   ".ricing", -- 'passive' UIs like statusline
   ".tools", -- 'active' UIs like sidebar
+  ".completion", -- intellisense & snippets & AI
 
-  -- ".completion", -- intellisense & snippets & AI
   -- ".mason", -- LSP, DAP, formatters, linters
 }
 

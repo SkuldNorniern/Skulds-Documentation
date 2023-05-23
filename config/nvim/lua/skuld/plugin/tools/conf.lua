@@ -147,7 +147,7 @@ end
 
 conf["nvim-neo-tree/neo-tree.nvim"] = function()
   require("neo-tree").setup()
-  vim.keymap.set("n", "<Leader>n", "<Cmd>Neotree<CR>", { desc = "file tree" })
+  vim.keymap.set("n", "<C-n>", "<Cmd>Neotree<CR>", { desc = "file tree" })
 end
 
 conf["akinsho/toggleterm.nvim"] = function()
