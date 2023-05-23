@@ -36,4 +36,11 @@ spec["ellisonleao/glow.nvim"] = {
   cmd = "Glow",
 }
 
+-- image preview with ascii art
+spec["samodostal/image.nvim"] = {
+  dependencies = {
+    "m00qek/baleia.nvim",
+  },
+}
+
 return spec
