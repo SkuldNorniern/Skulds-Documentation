@@ -4,12 +4,12 @@ local M = {}
 local category = {
   ".meta", -- common dependencies
   ".editing", -- editing & navigation
-  ".ricing", -- visual enhancement
   ".project", -- git integration & sessions
+  ".ricing", -- 'passive' UIs like statusline
+  ".tools", -- 'active' UIs like sidebar
 
   -- ".completion", -- intellisense & snippets & AI
   -- ".mason", -- LSP, DAP, formatters, linters
-  -- ".tools", -- literally tools idk
 }
 
 for _, cat in ipairs(category) do
