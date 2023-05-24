@@ -29,4 +29,7 @@ spec["danymat/neogen"] = {
   dependencies = "LuaSnip",
 }
 
+-- code ai completion
+spec["Exafunction/codeium.vim"] = {}
+
 return spec
