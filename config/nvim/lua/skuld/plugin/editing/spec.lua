@@ -33,4 +33,7 @@ spec["Wansmer/treesj"] = {
   },
 }
 
+-- live tips for efficient editing workflow
+spec["m4xshen/hardtime.nvim"] = {}
+
 return spec

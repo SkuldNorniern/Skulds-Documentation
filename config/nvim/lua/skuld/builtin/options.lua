@@ -12,4 +12,5 @@ return {
   cindent = true,
   timeoutlen = 300,
   updatetime = 100,
+  showmode = false,
 }
