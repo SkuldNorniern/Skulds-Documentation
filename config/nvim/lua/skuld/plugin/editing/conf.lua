@@ -78,4 +78,8 @@ conf["Wansmer/treesj"] = function()
   require("treesj").setup({ use_default_keymaps = false })
 end
 
+conf["m4xshen/hardtime.nvim"] = function()
+  require("hardtime").setup()
+end
+
 return conf
