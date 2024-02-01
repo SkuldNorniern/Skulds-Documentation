@@ -25,6 +25,11 @@ spec["kevinhwang91/nvim-ufo"] = {
   dependencies = "kevinhwang91/promise-async",
 }
 
+-- pets 
+spec["giusgad/pets.nvim"] = {
+  dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+}
+
 -- fancy notification
 spec["rcarriga/nvim-notify"] = {}
 
