@@ -7,11 +7,14 @@ conf["rose-pine/neovim"] = function()
 end
 
 conf["lukas-reineke/indent-blankline.nvim"] = function()
-  require("indent_blankline").setup({
-    -- char = '┊',
+  local highlight = {
+    "CursorColumn",
+    "Whitespace",
+  }
+  require("ibl").setup({
+    indent = { highlight = highlight, char = '┊' },
     -- context_char = '┊',
-    show_current_context = true,
-    show_current_context_start = true,
+    scope = { enabled = true, show_start = true },
   })
 end
 

@@ -7,7 +7,7 @@ spec["dracula/vim"] = { name = "dracula", lazy = true }
 spec["catppuccin/nvim"] = { name = "catppuccin", lazy = true } -- try catppuccin instead
 
 -- indentation guide
-spec["lukas-reineke/indent-blankline.nvim"] = {}
+spec["lukas-reineke/indent-blankline.nvim"] = { main = "ibl", opts = {} }
 
 -- highlight references of the symbol under the cursor
 spec["RRethy/vim-illuminate"] = {}
