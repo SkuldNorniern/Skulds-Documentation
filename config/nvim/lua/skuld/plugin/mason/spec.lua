@@ -35,6 +35,7 @@ spec["mfussenegger/nvim-dap"] = {
     "rcarriga/nvim-dap-ui",
     -- show variable state in a virtual text
     "theHamsta/nvim-dap-virtual-text",
+    "nvim-neotest/nvim-nio"
   },
 }
 

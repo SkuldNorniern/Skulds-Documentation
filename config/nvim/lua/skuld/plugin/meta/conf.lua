@@ -136,7 +136,7 @@ conf["nvim-treesitter/nvim-treesitter"] = function()
     endwise = { enable = true },
 
     context_commentstring = {
-      enable = true,
+      -- enable = true,
       enable_autocmd = false,
     },
 

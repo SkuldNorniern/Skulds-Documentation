@@ -32,4 +32,15 @@ spec["danymat/neogen"] = {
 -- code ai completion
 spec["Exafunction/codeium.vim"] = {}
 
+-- Chat GPT Local
+spec["jackMort/ChatGPT.nvim"] = {
+  event = "VeryLazy",
+  dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+}
+
 return spec
